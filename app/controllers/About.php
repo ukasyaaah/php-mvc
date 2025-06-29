@@ -21,7 +21,7 @@ class About extends Controllers
     // awal2 gabisa krn gada method index
     function page()
     {
-        $data['judul'] = "About's Page ";
+        $data['judul'] = "About's Page";
         $this->view('templates/header', $data);
         $this->view('about/page');
         $this->view('templates/footer');
