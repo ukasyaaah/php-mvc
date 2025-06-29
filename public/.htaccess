@@ -1,0 +1,11 @@
+Options -Multiviews
+
+RewriteEngine On 
+
+# klo url yg ditulis merupakan folder maka abaikan
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+
+# Ambil semua karakter sampe habis, arahkan ke index yg mengarahkan ke url
+# [L] artinya klo ada rule yg udh terpenuhi, maka jangan lakukan setelah ini
+RewriteRule ^(.*)$ index.php?url=$1 [L]
