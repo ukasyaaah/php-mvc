@@ -15,9 +15,19 @@
 
         <ul class="list-group ">
             <?php foreach ($data['mhs'] as $mhs) : ?>
-                <li class="list-group-item d-flex justify-content-between align-items-center"><?= $mhs->nama ?>
-                    <a href="<?= BASEURL ?>/mahasiswa/detail/<?= $mhs->id ?>"> <button type="button" class="btn btn-outline-dark ">Detail Mahasiswa</button>
-                    </a>
+                <li class="list-group-item d-flex  justify-content-between align-items-center fw-semibold">
+
+                    <?= $mhs->nama ?>
+
+
+                    <div>
+                        <a href="<?= BASEURL ?>/mahasiswa/detail/<?= $mhs->id ?>">
+                            <button type="button" class="btn btn-outline-dark m-2">Detail Mahasiswa</button>
+                        </a>
+                        <a href="<?= BASEURL ?>/mahasiswa/hapus/<?= $mhs->id ?>">
+                            <button type="button" class="btn btn-outline-danger m-2">Hapus Mahasiswa</button>
+                        </a>
+                    </div>
                 </li>
             <?php endforeach ?>
         </ul>
@@ -46,7 +56,7 @@
                     </div>
                     <div class="mb-3">
                         <label for="jurusan" class="form-label">Jurusan Mahasiswa</label>
-                        <select class="form-select" name="jurusan" id="jurusan" aria-label="Default select example" >
+                        <select class="form-select" name="jurusan" id="jurusan" aria-label="Default select example">
                             <option value="Teknologi Rekayasa Perangkat Lunak">Teknologi Rekayasa Perangkat Lunak</option>
                             <option value="Teknologi Rekayasa Multimedia Grafis">Teknologi Rekayasa Multimedia Grafis</option>
                             <option value="Teknologi Rekayasa Komputer Jaringan">Teknologi Rekayasa Komputer Jaringan</option>

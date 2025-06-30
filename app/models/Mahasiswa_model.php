@@ -39,4 +39,13 @@ class Mahasiswa_model
             echo "Error : "  . $e->getMessage();
         }
     }
+
+    function hapusDataMahasiswa($id)
+    {
+        $query = "DELETE  FROM " . $this->table . " WHERE id = :id";
+        $this->db->query($query);
+        $this->db->bind('id', $id);
+        $this->db->execute();
+        return $this->db->rowCount();
+    }
 }
