@@ -2,11 +2,17 @@
     <div class="row mx-5 my-5 ">
 
         <h1 class="text-center">Daftar Mahasiswa</h1>
+        <div class="row justify-content-center">
+            <div class="col-lg-6">
+                <?php Flasher::flash() ?>
+            </div>
+        </div>
+
         <!-- Button trigger modal -->
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#formModal">
+        <button type="button" class="btn btn-primary btn-lg gap-2 col-9 mx-auto mb-4" data-bs-toggle="modal" data-bs-target="#formModal">
             Tambah Data Mahasiswa
         </button>
-        <hr>
+
         <ul class="list-group ">
             <?php foreach ($data['mhs'] as $mhs) : ?>
                 <li class="list-group-item d-flex justify-content-between align-items-center"><?= $mhs->nama ?>
@@ -40,8 +46,7 @@
                     </div>
                     <div class="mb-3">
                         <label for="jurusan" class="form-label">Jurusan Mahasiswa</label>
-                        <select class="form-select" name="jurusan" id="jurusan" aria-label="Default select example">
-                            <option selected>Pilih Jurusan Mahasiswa</option>
+                        <select class="form-select" name="jurusan" id="jurusan" aria-label="Default select example" >
                             <option value="Teknologi Rekayasa Perangkat Lunak">Teknologi Rekayasa Perangkat Lunak</option>
                             <option value="Teknologi Rekayasa Multimedia Grafis">Teknologi Rekayasa Multimedia Grafis</option>
                             <option value="Teknologi Rekayasa Komputer Jaringan">Teknologi Rekayasa Komputer Jaringan</option>
