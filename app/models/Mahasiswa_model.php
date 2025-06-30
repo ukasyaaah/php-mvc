@@ -48,4 +48,38 @@ class Mahasiswa_model
         $this->db->execute();
         return $this->db->rowCount();
     }
+
+    function editDataMahasiswa($data)
+    {
+        try {
+            $query = "UPDATE " . $this->table . " SET";
+            $this->db->query($query);
+            $this->db->bind('nama', $data['nama']);
+            $this->db->bind('nim', $data['nim']);
+            $this->db->bind('jurusan', $data['jurusan']);
+
+            $this->db->execute();
+            return $this->db->rowCount();
+        } catch (PDOException $e) {
+            echo "Error : "  . $e->getMessage();
+        }
+    }
+
+    function ubahDataMahasiswa($data)
+    {
+        try {
+
+            $query = "UPDATE " . $this->table . " SET nama= :nama, nim= :nim, jurusan= :jurusan WHERE id= :id";
+            $this->db->query($query);
+            $this->db->bind('id', $data['id']);
+            $this->db->bind('nama', $data['nama']);
+            $this->db->bind('nim', $data['nim']);
+            $this->db->bind('jurusan', $data['jurusan']);
+
+            $this->db->execute();
+            return $this->db->rowCount();
+        } catch (PDOException $e) {
+            echo "Error : "  . $e->getMessage();
+        }
+    }
 }

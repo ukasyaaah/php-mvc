@@ -9,7 +9,7 @@
         </div>
 
         <!-- Button trigger modal -->
-        <button type="button" class="btn btn-primary btn-lg gap-2 col-9 mx-auto mb-4" data-bs-toggle="modal" data-bs-target="#formModal">
+        <button type="button" class="btn btn-primary tombolTambahData btn-lg gap-2 col-9 mx-auto mb-4" data-bs-toggle="modal" data-bs-target="#formModal">
             Tambah Data Mahasiswa
         </button>
 
@@ -21,12 +21,11 @@
 
 
                     <div>
-                        <a href="<?= BASEURL ?>/mahasiswa/detail/<?= $mhs->id ?>">
-                            <button type="button" class="btn btn-outline-dark m-2">Detail Mahasiswa</button>
-                        </a>
-                        <a href="<?= BASEURL ?>/mahasiswa/hapus/<?= $mhs->id ?>">
-                            <button type="button" class="btn btn-outline-danger m-2">Hapus Mahasiswa</button>
-                        </a>
+                        <a class="btn btn-outline-dark btn-sm m-2" href="<?= BASEURL ?>/mahasiswa/detail/<?= $mhs->id ?>">Detail</a>
+
+                        <a class="btn btn-outline-warning tampilModalUbah btn-sm m-2" data-bs-toggle="modal" data-bs-target="#formModal" data-id="<?= $mhs->id ?>" href="<?= BASEURL ?>/mahasiswa/edit/<?= $mhs->id ?>">Edit</a>
+
+                        <a class="btn btn-outline-danger btn-sm m-2" href="<?= BASEURL ?>/mahasiswa/hapus/<?= $mhs->id ?>">Hapus</a>
                     </div>
                 </li>
             <?php endforeach ?>
@@ -35,7 +34,7 @@
 </div>
 
 <!-- Modal -->
-<div class="modal fade" id="formModal" tabindex="-1" aria-labelledby="formModalLabel" aria-hidden="true">
+<div class="modal fade" id="formModal" tabindex="-1" aria-labelledby="formModalLabel" >
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -44,6 +43,7 @@
             </div>
             <div class="modal-body">
                 <form action="<?= BASEURL ?>/mahasiswa/tambah" method="post">
+                    <input type="hidden" name="id" id="id">
                     <div class="mb-3">
                         <label for="nama" class="form-label">Nama Mahasiswa</label>
                         <input type="text" class="form-control" id="nama" name="nama" required>
