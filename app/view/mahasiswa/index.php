@@ -8,11 +8,18 @@
             </div>
         </div>
 
+
         <!-- Button trigger modal -->
         <button type="button" class="btn btn-primary tombolTambahData btn-lg gap-2 col-9 mx-auto mb-4" data-bs-toggle="modal" data-bs-target="#formModal">
             Tambah Data Mahasiswa
         </button>
 
+        <form action="<?= BASEURL ?>/mahasiswa/cari" method="post">
+            <div class="input-group mb-3">
+                <input autocomplete="off" type="text" class="form-control" placeholder="Cari Mahasiswa" aria-label="Recipient’s username" aria-describedby="button-addon2" name="keyword" id="keyword">
+                <button class="btn btn-outline-primary" type="submit" id="tombolCari">Cari</button>
+            </div>
+        </form>
         <ul class="list-group ">
             <?php foreach ($data['mhs'] as $mhs) : ?>
                 <li class="list-group-item d-flex  justify-content-between align-items-center fw-semibold">
@@ -34,7 +41,7 @@
 </div>
 
 <!-- Modal -->
-<div class="modal fade" id="formModal" tabindex="-1" aria-labelledby="formModalLabel" >
+<div class="modal fade" id="formModal" tabindex="-1" aria-labelledby="formModalLabel">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
